@@ -1,0 +1,1024 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/4/2019 11:27:16 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PC597"
+  DTS:CreatorName="WBOOLWATER\craig.roberts"
+  DTS:DTSID="{D9A20F30-9A87-4688-A20E-FEB55B4A16D9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="3081"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{DC50B319-EA84-4328-A3D0-9216E1F6515B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Build the history table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E47721FA-2293-46DC-9313-25F1125B695A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Build the history table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Build the history table\Read From Stage table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Read From Stage table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[TradeWasteFlowsStage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Build the history table\Read From Stage table.Connections[OleDbConnection]"
+                  connectionManagerID="{3B86184B-EC2C-4A8F-BAEE-C56A0D5C918F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[swsvr07.OnCall2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[PPoint]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[PPoint]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[PPoint]"
+                      name="PPoint"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[PRecordTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[PRecordTime]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[PRecordTime]"
+                      name="PRecordTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[PLocalTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[PLocalTime]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[PLocalTime]"
+                      name="PLocalTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[PRecordDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[PRecordDate]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[PRecordDate]"
+                      name="PRecordDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[Evalue]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[Evalue]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[Evalue]"
+                      name="Evalue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[ARecordDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[ARecordDate]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[ARecordDate]"
+                      name="ARecordDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[ALocalTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[ALocalTime]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[ALocalTime]"
+                      name="ALocalTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[AValue]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[AValue]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[AValue]"
+                      name="AValue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[Yesterday]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[Yesterday]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[Yesterday]"
+                      name="Yesterday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[TodayDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[TodayDate]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[TodayDate]"
+                      name="TodayDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[DailyUse]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[DailyUse]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[DailyUse]"
+                      name="DailyUse"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[PPoint]"
+                      dataType="i4"
+                      name="PPoint" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[PRecordTime]"
+                      dataType="dbTimeStamp"
+                      name="PRecordTime" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[PLocalTime]"
+                      dataType="dbTimeStamp"
+                      name="PLocalTime" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[PRecordDate]"
+                      dataType="dbDate"
+                      name="PRecordDate" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[Evalue]"
+                      dataType="r4"
+                      name="Evalue" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[ARecordDate]"
+                      dataType="dbTimeStamp"
+                      name="ARecordDate" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[ALocalTime]"
+                      dataType="dbTimeStamp"
+                      name="ALocalTime" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[AValue]"
+                      dataType="r4"
+                      name="AValue" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[Yesterday]"
+                      dataType="dbDate"
+                      name="Yesterday" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[TodayDate]"
+                      dataType="dbDate"
+                      name="TodayDate" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].ExternalColumns[DailyUse]"
+                      dataType="r4"
+                      name="DailyUse" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[PPoint]"
+                      dataType="i4"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[PPoint]"
+                      name="PPoint" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[PRecordTime]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[PRecordTime]"
+                      name="PRecordTime" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[PLocalTime]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[PLocalTime]"
+                      name="PLocalTime" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[PRecordDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[PRecordDate]"
+                      name="PRecordDate" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[Evalue]"
+                      dataType="r4"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[Evalue]"
+                      name="Evalue" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[ARecordDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[ARecordDate]"
+                      name="ARecordDate" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[ALocalTime]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[ALocalTime]"
+                      name="ALocalTime" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[AValue]"
+                      dataType="r4"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[AValue]"
+                      name="AValue" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[Yesterday]"
+                      dataType="dbDate"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[Yesterday]"
+                      name="Yesterday" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[TodayDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[TodayDate]"
+                      name="TodayDate" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[DailyUse]"
+                      dataType="r4"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[DailyUse]"
+                      name="DailyUse" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Build the history table\Stop duplicates"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Stop duplicates"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TradeWasteFlows]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TradeWasteFlows]) [refTable]
+where [refTable].[PPoint] = ? and [refTable].[TodayDate] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PPoint" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PRecordTime" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PLocalTime" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PRecordDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Evalue" dataType="DT_R4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ARecordDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ALocalTime" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AValue" dataType="DT_R4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Yesterday" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TodayDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DailyUse" dataType="DT_R4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[PPoint]};#{Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[TodayDate]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Build the history table\Stop duplicates.Connections[OleDbConnection]"
+                  connectionManagerID="{3B86184B-EC2C-4A8F-BAEE-C56A0D5C918F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[swsvr07.OnCall2]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Build the history table\Stop duplicates.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Build the history table\Stop duplicates.Inputs[Lookup Input].Columns[PPoint]"
+                      cachedDataType="i4"
+                      cachedName="PPoint"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[PPoint]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PPoint</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Build the history table\Stop duplicates.Inputs[Lookup Input].Columns[TodayDate]"
+                      cachedDataType="dbDate"
+                      cachedName="TodayDate"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[TodayDate]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">TodayDate</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Build the history table\Stop duplicates.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Build the history table\Stop duplicates.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Build the history table\Stop duplicates.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Build the history table\Stop duplicates.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Build the history table\Stop duplicates.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Build the history table\Stop duplicates.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Build the history table\Stop duplicates.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Build the history table\Stop duplicates.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Build the history table\Stop duplicates.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Build the history table\Stop duplicates.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Build the history table\Write to final table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Write to final table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[TradeWasteFlows]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Build the history table\Write to final table.Connections[OleDbConnection]"
+                  connectionManagerID="{3B86184B-EC2C-4A8F-BAEE-C56A0D5C918F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[swsvr07.OnCall2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].Columns[PPoint]"
+                      cachedDataType="i4"
+                      cachedName="PPoint"
+                      externalMetadataColumnId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[PPoint]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[PPoint]" />
+                    <inputColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].Columns[PRecordTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="PRecordTime"
+                      externalMetadataColumnId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[PRecordTime]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[PRecordTime]" />
+                    <inputColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].Columns[PLocalTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="PLocalTime"
+                      externalMetadataColumnId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[PLocalTime]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[PLocalTime]" />
+                    <inputColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].Columns[PRecordDate]"
+                      cachedDataType="dbDate"
+                      cachedName="PRecordDate"
+                      externalMetadataColumnId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[PRecordDate]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[PRecordDate]" />
+                    <inputColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].Columns[Evalue]"
+                      cachedDataType="r4"
+                      cachedName="Evalue"
+                      externalMetadataColumnId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[Evalue]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[Evalue]" />
+                    <inputColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].Columns[ARecordDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ARecordDate"
+                      externalMetadataColumnId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[ARecordDate]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[ARecordDate]" />
+                    <inputColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].Columns[ALocalTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ALocalTime"
+                      externalMetadataColumnId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[ALocalTime]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[ALocalTime]" />
+                    <inputColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].Columns[AValue]"
+                      cachedDataType="r4"
+                      cachedName="AValue"
+                      externalMetadataColumnId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[AValue]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[AValue]" />
+                    <inputColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].Columns[Yesterday]"
+                      cachedDataType="dbDate"
+                      cachedName="Yesterday"
+                      externalMetadataColumnId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[Yesterday]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[Yesterday]" />
+                    <inputColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].Columns[TodayDate]"
+                      cachedDataType="dbDate"
+                      cachedName="TodayDate"
+                      externalMetadataColumnId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[TodayDate]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[TodayDate]" />
+                    <inputColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].Columns[DailyUse]"
+                      cachedDataType="r4"
+                      cachedName="DailyUse"
+                      externalMetadataColumnId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[DailyUse]"
+                      lineageId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output].Columns[DailyUse]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[PPoint]"
+                      dataType="i4"
+                      name="PPoint" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[PRecordTime]"
+                      dataType="dbTimeStamp"
+                      name="PRecordTime" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[PLocalTime]"
+                      dataType="dbTimeStamp"
+                      name="PLocalTime" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[PRecordDate]"
+                      dataType="dbDate"
+                      name="PRecordDate" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[Evalue]"
+                      dataType="r4"
+                      name="Evalue" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[ARecordDate]"
+                      dataType="dbTimeStamp"
+                      name="ARecordDate" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[ALocalTime]"
+                      dataType="dbTimeStamp"
+                      name="ALocalTime" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[AValue]"
+                      dataType="r4"
+                      name="AValue" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[Yesterday]"
+                      dataType="dbDate"
+                      name="Yesterday" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[TodayDate]"
+                      dataType="dbDate"
+                      name="TodayDate" />
+                    <externalMetadataColumn
+                      refId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input].ExternalColumns[DailyUse]"
+                      dataType="r4"
+                      name="DailyUse" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Build the history table\Write to final table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Build the history table\Write to final table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Build the history table\Write to final table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Build the history table\Write to final table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Build the history table\Write to final table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Build the history table.Paths[Lookup No Match Output]"
+              endId="Package\Build the history table\Write to final table.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Build the history table\Stop duplicates.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Build the history table.Paths[OLE DB Source Output]"
+              endId="Package\Build the history table\Stop duplicates.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Build the history table\Read From Stage table.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Clear the Stage table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6938DFA0-4F37-4E91-9309-781A65FD9883}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clear the Stage table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3B86184B-EC2C-4A8F-BAEE-C56A0D5C918F}"
+          SQLTask:SqlStatementSource="truncate table TradeWasteFlowsStage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute the Stored Procedure"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BECF9485-C641-45C8-A70E-7F945E7288AD}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute the Stored Procedure"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3B86184B-EC2C-4A8F-BAEE-C56A0D5C918F}"
+          SQLTask:SqlStatementSource="exec USR_SP_WASTEData" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fix up for Nulls"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Fix for no flows"
+      DTS:DTSID="{E0D4F00C-BB11-4C1C-90CA-4AE64CD5BC3D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fix up for Nulls"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3B86184B-EC2C-4A8F-BAEE-C56A0D5C918F}"
+          SQLTask:SqlStatementSource="Exec USR_SP_WasteDataNulls" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{0997D450-AF8E-4F60-8558-4DAA8C275035}"
+      DTS:From="Package\Build the history table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Clear the Stage table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{F8AA3206-75BC-448A-B5BA-A808C39BBF73}"
+      DTS:From="Package\Execute the Stored Procedure"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fix up for Nulls" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{373301CC-3676-4959-A963-FF34E8DDC60F}"
+      DTS:From="Package\Fix up for Nulls"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Build the history table" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Build the history table"
+          TopLeft="117,240" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Clear the Stage table"
+          TopLeft="117,335" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\Execute the Stored Procedure"
+          TopLeft="98,70" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Fix up for Nulls"
+          TopLeft="134,144" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="207,282">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="208.25,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="208.5,186">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Build the history table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Build the history table\Write to final table"
+          TopLeft="188,258" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Build the history table\Read From Stage table"
+          TopLeft="110,97" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Build the history table\Stop duplicates"
+          TopLeft="441,156" />
+        <EdgeLayout
+          Id="Package\Build the history table.Paths[OLE DB Source Output]"
+          TopLeft="297,118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="144,59"
+              Start="0,0"
+              End="136.5,59">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="68,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68,0"
+                    Point2="72,0"
+                    Point3="72,4" />
+                  <mssgle:LineSegment
+                    End="72,55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="72,55"
+                    Point2="72,59"
+                    Point3="76,59" />
+                  <mssgle:LineSegment
+                    End="136.5,59" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Build the history table.Paths[Lookup No Match Output]"
+          TopLeft="516.5,198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-245.5,60"
+              Start="0,0"
+              End="-245.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-241.5,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-241.5,30"
+                    Point2="-245.5,30"
+                    Point3="-245.5,34" />
+                  <mssgle:LineSegment
+                    End="-245.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-187.4250390625,35,129.350078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Build the history table\Write to final table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Build the history table\Read From Stage table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Build the history table\Stop duplicates">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TradeWasteFlows]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
